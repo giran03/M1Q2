@@ -83,16 +83,16 @@ function update ()
     this.physics.add.overlap(player,fruits, fruitCollect, null, this)
 
     // player controls
-    if (cursors.left.isDown) { player.setVelocityX(-600) }
+    if (cursors.left.isDown) { player.setVelocityX(-600) } // left
 
-    else if (cursors.right.isDown) { player.setVelocityX(600) }
+    else if (cursors.right.isDown) { player.setVelocityX(600) } // right
 
-    else { player.setVelocityX(0) }
+    else { player.setVelocityX(0) } // idle
     
-    if (cursors.up.isDown && player.body.touching.down) { player.setVelocityY(-1200) }
+    if (cursors.up.isDown && player.body.touching.down) { player.setVelocityY(-1200) } // jump
 }
 
-// called when overlap happens between player and fruits | line 84
+// called when overlap happens between player and fruits | line 83
 function fruitCollect(player, fruit) {
     fruit.disableBody(true, true);  // remove fruit
     score += 10 ;
